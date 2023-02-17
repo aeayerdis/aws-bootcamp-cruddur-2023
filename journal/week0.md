@@ -17,7 +17,7 @@ This week we discussed the importance of diagrams. Providing a conceptual image 
 
 
 ## Gitpod
-
+For the AWS Bootcamp, we have the option to either use GitHub Codespaces or Gitpod. Both come with a Free Tier. I decided to go with Gitpod and I connected it as an OAUTH app to my GitHub account. Gitpod is a Cloud Development Environment. Basically a containerized environment that is cloud hosted. The concept is pretty great! Give developers or users an environment without all of the bloatware to install and run whatever packages they want without impacting their local hosts. I also like the ability to save global variables for the repo that are stored in Gitpod and not somewhere in my repo, this includes AWS Secrets!
 
 ## Billing
 
