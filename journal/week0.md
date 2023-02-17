@@ -20,9 +20,10 @@ This week we discussed the importance of diagrams. Providing a conceptual image 
 For the AWS Bootcamp, we have the option to either use GitHub Codespaces or Gitpod. Both come with a Free Tier. I decided to go with Gitpod and I connected it as an OAUTH app to my GitHub account. Gitpod is a Cloud Development Environment. Basically a containerized environment that is cloud hosted. The concept is pretty great! Give developers or users an environment without all of the bloatware to install and run whatever packages they want without impacting their local hosts. I also like the ability to save global variables for the repo that are stored in Gitpod and not somewhere in my repo, this includes AWS Secrets!
 
 ## Billing
-
+Regarding Billing in AWS, I watched Chirag Nayyar's [video](https://youtu.be/OVw3RrlP-sI) for Pricing Basics and Free Tier services. He went over the various Free Tier options as well as setting up Billing Alerts. This information was also covered in [Andrew's video] (https://youtu.be/OdUnNuKylHg) for generating credentials for AWS CLI, Creating Billing Alerts via SNS and Budget creations
 
 ## AWS CLI
-
+As previously mentioned, while watching Andrew's video on generating credentials for AWSCLI, we were able to review which IAM user we were based on the creds we had saved to our Gitpod environment. After creating the budget through "click-automation" in the console, I deleted it and went through the process of creating the Budget using the JSON files in my aws/json directory of this repo. Afterwards I created the SNS and billing-alarm service to email my account if there were any billing thresholds exceeded.
 
 ## IAM
+Part of the homework was to get rid of the root credentials for our AWS account and create a new user. I created a new user and had to create a new user group (Admin) and assign the Administrator Full Rights policy to it. I also assigned MFA to both root account and my IAM user to limit my account from being taken over.
