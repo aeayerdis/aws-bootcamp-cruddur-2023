@@ -1,7 +1,7 @@
 # Week 0 — Billing and Architecture
 
 ## Architecture Diagram
-This week we discussed the importance of diagrams. Providing a conceptual image of what we wish to build. It doesn't have to be low level in the beginning with ARNs or anything. The more comfortable we are with the stack, the more we can be specific in the diagram. I started to use the free version of Lucidchart but ran out of "free images". I pivoted to draw.io to recreate the full diagram and downloaded the [AWS Icons PPT](https://aws.amazon.com/blogs/aws/introducing-aws-simple-icons-for-your-architecture-diagrams/) from the inter-webs. 
+This week we discussed the importance of diagrams. Providing a conceptual image of what we wish to build. It doesn't have to be low level in the beginning with ARNs or anything. The more comfortable we are with the stack, the more we can be specific in the diagram. I used LucidCharts to recreate the full diagram and downloaded the [AWS Icons PPT](https://aws.amazon.com/blogs/aws/introducing-aws-simple-icons-for-your-architecture-diagrams/) from the inter-webs. 
 
 
 [Initial Conceptual Diagram](https://lucid.app/lucidchart/22fa8113-03ed-4df9-a856-59d4be4e532e/edit?viewport_loc=75%2C103%2C2157%2C1055%2C0_0&invitationId=inv_6dc8fcf1-4b6a-447a-8d63-7e7c3dcf8fef)
