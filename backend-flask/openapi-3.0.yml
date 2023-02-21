@@ -148,7 +148,21 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Message'
-
+  /api/activities/notifications:
+    get:
+      description: 'Return a fee of activity for all accounts that I follow'
+      tags:
+        - activities
+      parameters: []
+      responses:
+        '200':
+          description: Returns an array of activity
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity'
 components:
   schemas:
     Activity:
