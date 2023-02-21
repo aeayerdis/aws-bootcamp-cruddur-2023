@@ -22,8 +22,6 @@ tasks:
   - name: net-tools
     init: |
       sudo apt install net-tools
-  
-
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
