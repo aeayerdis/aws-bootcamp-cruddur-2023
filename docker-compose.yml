@@ -13,6 +13,8 @@ services:
       OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
       OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
       ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
+      AWS_COGNITO_USER_POOL_ID: "us-east-1_tNfuLzk2A"
+      AWS_COGNITO_USER_POOL_CLIENT_ID: "3a2nq6simspt3co9hgca11f6ku"
       
     build: ./backend-flask
     ports:
