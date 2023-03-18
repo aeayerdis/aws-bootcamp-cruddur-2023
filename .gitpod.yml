@@ -27,6 +27,10 @@ tasks:
   - name: net-tools
     init: |
       sudo apt install net-tools
+  - name: momento
+    before: |
+      brew tap momentohq/tap
+      brew install momento-cli
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
