@@ -1,2 +1,3 @@
 session-manager-plugin.deb
+docker/**/*
 frontend-react-js/build/*
