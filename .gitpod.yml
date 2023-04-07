@@ -2,26 +2,27 @@ tasks:
   - name: aws-cli
     env:
       AWS_CLI_AUTO_PROMPT: on-partial
-    init: |
+    before: |
       cd /workspace
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       unzip awscliv2.zip
       sudo ./aws/install
       cd $THEIA_WORKSPACE_ROOT
     command: |
-      ./bin/services/start-services
-  - name: npm-installl
-    init: |
-      cd /workspace/aws-bootcamp-cruddur-2023/frontend-react-js
+      source  "$THEIA_WORKSPACE_ROOT/bin/services/start-services"
+  - name: frontend
+    before: |
+      source  "$THEIA_WORKSPACE_ROOT/bin/frontend/generate-env"
+      cd frontend-react-js
       npm i
-      exit 
-  - name: upgrade-pip    
+  - name: backend-flask    
     command: |
-      cd /workspace/aws-bootcamp-cruddur-2023/backend-flask
+      source  "$THEIA_WORKSPACE_ROOT/bin/backend/generate-env"
+      cd backend-flask
       pip install -r requirements.txt
       pip install --upgrade pip
   - name: postgres
-    init: |
+    before: |
       curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/postgresql.gpg
       echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee  /etc/apt/sources.list.d/pgdg.list
       sudo apt update
@@ -30,7 +31,7 @@ tasks:
       export GITPOD_IP=$(curl ifconfig.me)
       source  "$THEIA_WORKSPACE_ROOT/backend-flask/bin/rds/update-sg-rule"
   - name: net-tools
-    init: |
+    before: |
       sudo apt install net-tools
   - name: momento
     before: |
@@ -40,6 +41,7 @@ tasks:
     before: |
       curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
       sudo dpkg -i session-manager-plugin.deb
+      cd backend-flask
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
