@@ -7,8 +7,9 @@ tasks:
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       unzip awscliv2.zip
       sudo ./aws/install
-      aws rds start-db-instance --db-instance-identifier $RDS_INSTANCE
       cd $THEIA_WORKSPACE_ROOT
+    command: |
+      ./bin/services/start-services
   - name: npm-installl
     init: |
       cd /workspace/aws-bootcamp-cruddur-2023/frontend-react-js
