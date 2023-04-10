@@ -12,10 +12,14 @@ echo $THEIA_WORKSPACE_ROOT
 # wait for 60 seconds
 sleep 5
 
-
+# Runs Docker Compose UP
 ./bin/local-deploy/docker-compose
 
 # wait for 60 seconds
 sleep 60
 
+# Sets up the database environment
 ./bin/db/setup
+
+# Sets up dynamoDB
+./bin/ddb/schema-load 
