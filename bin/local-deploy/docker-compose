@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# change to the directory containing the Docker Compose file
+cd  "$THEIA_WORKSPACE_ROOT/"
+
+# run Docker Compose with the specified Compose file
+docker-compose -f docker-compose.yml up -d

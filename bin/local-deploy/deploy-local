@@ -1,0 +1,21 @@
+#! /usr/bin/bash
+
+# Login to AWS ECR to grab Container Images fro Front and Backend
+aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com"
+
+# Generate backend and frontend env files for DockerCompose file
+cd  "$THEIA_WORKSPACE_ROOT/"
+echo $THEIA_WORKSPACE_ROOT
+./bin/backend/generate-env
+./bin/frontend/generate-env
+
+# wait for 60 seconds
+sleep 5
+
+
+./bin/local-deploy/docker-compose
+
+# wait for 60 seconds
+sleep 60
+
+./bin/db/setup
