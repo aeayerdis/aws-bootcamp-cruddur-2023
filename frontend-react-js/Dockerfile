@@ -1,4 +1,4 @@
-FROM node:16.19.1
+FROM cgr.dev/chainguard/node:latest
 
 ENV PORT=3000
 
